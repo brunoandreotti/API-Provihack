@@ -1,14 +1,22 @@
-import express from 'express'
 require('dotenv-safe').config({
   allowEmptyValues: true
 })
+import express from 'express'
+
+
 //Conexão com o banco
-const sequelize = require('./database/config.js')
+const sequelize = require('./database/config')
+
+//Routers
+import donoRouter from './routes/Donor.routes'
 
 const app = express()
 const PORT = process.env.PORT
 
 app.use(express.json())
+
+//Rotas
+app.use('/donor', donoRouter)
 
 //Sincronização com o banco
 async function sync() {
