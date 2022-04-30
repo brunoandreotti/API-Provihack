@@ -9,7 +9,7 @@ import {
 } from "sequelize-typescript";
 
 @Table
-export class Donor extends Model {
+export class Donee extends Model {
   @PrimaryKey
   @Default(UUIDV4)
   @Column(DataType.UUID)
@@ -17,6 +17,9 @@ export class Donor extends Model {
 
   @Column
   name!: string;
+
+  @Column
+  responsible!: string;
 
   @Column
   cnpj!: string;
