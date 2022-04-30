@@ -4,17 +4,18 @@ import { Bcrypt } from "../utils/encrypt";
 class CreateDonorService {
   static async execute(data: TDonor) {
     try {
-      const {password, ...donor} = data
-      const encodedPassword = await Bcrypt.encrypt(password)
-      const newDonor = await Donor.create({
+      const { password, ...donor } = data;
+      const encodedPassword = await Bcrypt.encrypt(password);
+      const newDonor = new Donor({
         password: encodedPassword,
-        ...donor
-      })
-      return newDonor
+        ...donor,
+      });
+      newDonor.save();
+      return newDonor;
     } catch (error) {
-      return error
+      return error;
     }
   }
 }
 
-export default CreateDonorService
+export default CreateDonorService;
