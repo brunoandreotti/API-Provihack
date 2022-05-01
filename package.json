@@ -2,9 +2,11 @@
   "name": "api-provihack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/app.js",
+    "build": "tsc ./app.js",
+    "postinstall": "npm run build",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
   },
   "repository": {

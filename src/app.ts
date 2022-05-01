@@ -24,7 +24,7 @@ app.use("/product", productRouter)
 //Sincronização com o banco
 async function sync() {
   try {
-    await sequelize.sync();
+    await sequelize.sync({});
 
     app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
   } catch (error) {

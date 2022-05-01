@@ -7,7 +7,7 @@ export class CreateProductController {
 
     console.log(id)
 
-    const { expiration, name, qnt, unity }: TProducts = req.body
+    const { expiration, name, qnt, unity, obs }: TProducts = req.body
 
     //Validaçoes
     if (!name || !expiration || !qnt || !unity) {
@@ -21,7 +21,8 @@ export class CreateProductController {
       name,
       qnt,
       unity,
-      expiration
+      expiration,
+      obs
     }
 
     try {
