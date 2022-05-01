@@ -1,5 +1,6 @@
 import { Donor } from "../../models/Donor.model";
 import { Request, Response } from "express";
+import { Product } from "../../models/Product.model";
 
 export class FindDonorByIdController {
   static async find(req: Request | any, res: Response) {
@@ -7,7 +8,8 @@ export class FindDonorByIdController {
 
     //Retorna os dados do usuário baseado no id menos o password
     const user = await Donor.findByPk(id, {
-      attributes: { exclude: ["password"] },
+      attributes: { exclude: ["password"]},
+      include: [Product]
     });
 
     if (!user) {

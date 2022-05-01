@@ -1,7 +1,7 @@
 type TProducts = {
     id?: string
     name: string
-    qtd: string
+    qnt: string
     unity: string
     expiration: Date
   }

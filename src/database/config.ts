@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize-typescript";
 require("dotenv-safe/config.js");
 import { Donor } from "../models/Donor.model";
 import { Donee } from "../models/Donee.model";
+import { Product } from "../models/Product.model";
 
 const sequelize = new Sequelize({
   dialectOptions: {
@@ -17,8 +18,8 @@ const sequelize = new Sequelize({
   host: "ec2-3-211-6-217.compute-1.amazonaws.com",
 });
 
-sequelize.addModels([Donor]);
-sequelize.addModels([Donee]);
+sequelize.addModels([Donor, Donee, Product]);
+
 
 async function connect() {
   try {
