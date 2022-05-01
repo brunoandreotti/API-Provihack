@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
-require("dotenv-safe/config.js");
+
 import { Donor } from "../models/Donor.model";
 import { Donee } from "../models/Donee.model";
 import { Product } from "../models/Product.model";
@@ -11,11 +11,11 @@ const sequelize = new Sequelize({
       rejectUnauthorized: false,
     },
   },
-  database: "d9nkptqi931r7",
+  database: "d858vp3d1ql4j6",
   dialect: "postgres",
-  username: "prryztyjccwrws",
-  password: "af1c58bb0cdb36c4923956be539f576724e7c89f5e0a3cacd9ab57efb7cb8f1e",
-  host: "ec2-3-211-6-217.compute-1.amazonaws.com",
+  username: "bqiwajmkvfuvzr",
+  password: "2ca4c7ec0e436d2fbdade995d55832b90932dc4644c63973836c141499161d1a",
+  host: "ec2-54-80-122-11.compute-1.amazonaws.com",
 });
 
 sequelize.addModels([Donor, Donee, Product]);

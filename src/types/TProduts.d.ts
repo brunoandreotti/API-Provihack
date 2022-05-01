@@ -4,5 +4,6 @@ type TProducts = {
     qnt: string
     unity: string
     expiration: Date
+    obs?: string
   }
   

@@ -30,6 +30,9 @@ export class Product extends Model {
   @Column
   expiration!: Date
 
+  @Column
+  obs!: string
+
   @ForeignKey(() => Donor)
   @Column(DataType.UUID)
   donorId!: string
