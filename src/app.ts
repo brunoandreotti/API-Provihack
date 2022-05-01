@@ -19,6 +19,9 @@ app.use(cors())
 app.use(express.json());
 
 //Rotas
+app.get("/", (req, res) => {
+  res.json({message: "API PROVIHACK EQUIPE 4 - "})
+})
 app.use("/donor", donorRouter);
 app.use("/donee", doneeRouter);
 app.use("/product", productRouter)
