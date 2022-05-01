@@ -47,8 +47,12 @@ export class LoginDoneeController {
       //Retorna o token
       res.cookie("jwt", token, { httpOnly: true, maxAge: 86400000 });
       res.status(200).json({
-        message: "Você está autenticado!",
+        message: "You are authenticated!",
         token,
+        user: {
+          name: user.name,
+          responsible: user.responsible
+        }
       });
     } catch (error) {
       console.log(error);

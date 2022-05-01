@@ -35,7 +35,7 @@ export class LoginDonorController {
       if (!passwordMatch) {
         res.status(422).json({
           status: 422,
-          message: "The passwords must match!",
+          message: "Incorrect password or email.",
         });
 
         return;
@@ -47,8 +47,12 @@ export class LoginDonorController {
       //Retorna o token
       res.cookie("jwt", token, { httpOnly: true, maxAge: 86400000 });
       res.status(200).json({
-        message: "Você está autenticado!",
+        message: "You are authenticated!",
         token,
+        user: {
+          name: user.name,
+          
+        }
       });
     } catch (error) {
       console.log(error);
