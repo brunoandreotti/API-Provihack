@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node build/app.js",
-    "build": "tsc ./app.js",
+    "start": "node ./src/app.js",
+    "build": "tsc",
     "postinstall": "npm run build",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
   },
