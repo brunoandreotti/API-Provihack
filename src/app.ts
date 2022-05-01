@@ -2,6 +2,7 @@ require("dotenv-safe").config({
   allowEmptyValues: true,
 });
 import express from "express";
+import cors from "cors"
 
 //Conexão com o banco
 const sequelize = require("./database/config");
@@ -14,6 +15,7 @@ import productRouter from "./routes/Product.routes"
 const app = express();
 const PORT = process.env.PORT;
 
+app.use(cors())
 app.use(express.json());
 
 //Rotas
