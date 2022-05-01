@@ -52,3 +52,19 @@
   "confirmpassword": "123456789"
 }
 ```
+## Produto
+
+<b>[GET] </b> /product/ - A rota deve exibir as informações dos produtos<br>
+
+
+<b>[POST] </b> /product/create - A rota deve cadastrar um doador com as informações passadas no body da requisição.<br>
+
+```javascript
+{
+  "name": "Batata",
+  "qnt": 20,
+  "unity": "kg",
+  "expiration": "2020-10-10",
+	"obs": "obs teste"
+}
+```
