@@ -9,6 +9,7 @@ const sequelize = require("./database/config");
 //Routers
 import donorRouter from "./routes/Donor.routes";
 import doneeRouter from "./routes/Donee.routes";
+import productRouter from "./routes/Product.routes"
 
 const app = express();
 const PORT = process.env.PORT;
@@ -18,6 +19,7 @@ app.use(express.json());
 //Rotas
 app.use("/donor", donorRouter);
 app.use("/donee", doneeRouter);
+app.use("/product", productRouter)
 
 //Sincronização com o banco
 async function sync() {

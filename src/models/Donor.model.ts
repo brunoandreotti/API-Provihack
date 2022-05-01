@@ -6,7 +6,9 @@ import {
   DataType,
   PrimaryKey,
   Default,
+  HasMany,
 } from "sequelize-typescript";
+import { Product } from "./Product.model";
 
 @Table
 export class Donor extends Model {
@@ -29,4 +31,7 @@ export class Donor extends Model {
 
   @Column
   password!: string;
+
+  @HasMany(() => Product)
+  products!: Product[]
 }
